@@ -1,15 +1,57 @@
-let pixel_array = neopixel.create(DigitalPin.P0, 5, NeoPixelMode.RGB)
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Right, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    basic.clearScreen()
+    radio.sendValue("right", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Down, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    basic.clearScreen()
+    radio.sendValue("backwards", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Down, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        # . # . #
+        . # # # .
+        . . # . .
+        `)
+    radio.sendValue("backwards", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Left, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    basic.clearScreen()
+    radio.sendValue("left", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Up, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    basic.showLeds(`
+        . . # . .
+        . # # # .
+        # . # . #
+        . . # . .
+        . . # . .
+        `)
+    radio.sendValue("forwards", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Up, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    basic.clearScreen()
+    radio.sendValue("forwards", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Right, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    basic.showLeds(`
+        . . # . .
+        . . . # .
+        # # # # #
+        . . . # .
+        . . # . .
+        `)
+    radio.sendValue("right", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Left, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    basic.showLeds(`
+        . . # . .
+        . # . . .
+        # # # # #
+        . # . . .
+        . . # . .
+        `)
+    radio.sendValue("left", 1)
+})
 radio.setGroup(1)
-pixel_array.showColor(neopixel.colors(NeoPixelColors.Red))
-kitronik_servo_lite.forward()
-basic.pause(5000)
-pixel_array.showColor(neopixel.colors(NeoPixelColors.Blue))
-kitronik_servo_lite.turnRight(180)
-pixel_array.showColor(neopixel.colors(NeoPixelColors.Green))
-kitronik_servo_lite.forward()
-basic.pause(5000)
-pixel_array.showColor(neopixel.colors(NeoPixelColors.Purple))
-kitronik_servo_lite.turnLeft(180)
-pixel_array.showColor(neopixel.colors(NeoPixelColors.White))
-kitronik_servo_lite.backward()
-basic.pause(5000)

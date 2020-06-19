@@ -5,7 +5,8 @@
         "core": "*",
         "radio": "*",
         "pxt-kitronik-servo-lite": "github:kitronikltd/pxt-kitronik-servo-lite#v1.0.5",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3"
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3",
+        "pxt-kitronik-game-controller": "github:kitronikltd/pxt-kitronik-game-controller#v0.0.2"
     },
     "files": [
         "main.blocks",

@@ -1,5 +1,5 @@
 {
-    "name": "move+controller",
+    "name": "move_controller",
     "description": "",
     "dependencies": {
         "core": "*",
